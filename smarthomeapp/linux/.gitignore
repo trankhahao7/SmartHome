@@ -1,0 +1,12 @@
+# Flutter-related
+flutter/ephemeral/
+flutter/generated_plugins.cmake
+
+# Build directories
+build/
+.dart_tool/
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+*.cmake
