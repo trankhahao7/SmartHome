@@ -1,0 +1,129 @@
+name: Bug report
+description: Report a reproducible problem in the SmartHome app, server, or ESP32 firmware.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Search existing issues first so reports can be tracked together.
+
+        **Do not report security vulnerabilities here.** Use [GitHub Private Vulnerability Reporting](https://github.com/trankhahao7/SmartHome/security/advisories/new) as described in [SECURITY.md](https://github.com/trankhahao7/SmartHome/blob/main/SECURITY.md).
+
+        Remove passwords, tokens, Wi-Fi credentials, private keys, and personal data from logs and screenshots before submitting.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for a duplicate.
+          required: true
+        - label: I can reproduce this problem or have described how it occurred.
+          required: true
+        - label: I have read and agree to follow the [Code of Conduct](https://github.com/trankhahao7/SmartHome/blob/main/CODE_OF_CONDUCT.md).
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected component
+      description: Select the part of the project where the problem occurs.
+      multiple: false
+      options:
+        - Flutter app
+        - FastAPI server
+        - ESP32 firmware or hardware
+        - Documentation
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the problem and its impact.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Give the smallest set of steps that reliably reproduces the issue.
+      placeholder: |
+        1. Start the affected component
+        2. Perform an action
+        3. Observe the result
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Project version or commit
+      description: For unreleased code, provide the commit SHA if available; otherwise enter unknown.
+      placeholder: "1.0.0+1, a commit SHA, or unknown"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system or target
+      multiple: true
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Android
+        - iOS
+        - Web browser
+        - ESP32 board
+        - Other
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Relevant environment details
+      description: Include Python, Flutter/Dart, browser, Arduino toolchain, board, or library versions as applicable.
+      placeholder: Leave blank if not applicable.
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error message or logs
+      description: Paste relevant output after removing secrets, credentials, private keys, and personal data.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Workarounds tried, how often it occurs, or links to a minimal reproduction.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to help investigate or submit a fix.
+          required: false
